@@ -8,6 +8,7 @@
 #pragma package(smart_init)
 #pragma link "AdvMemo"
 #pragma resource "*.dfm"
+#pragma link "litesync-0.1.lib"
 TFormMain *FormMain;
 //---------------------------------------------------------------------------
 __fastcall TFormMain::TFormMain(TComponent* Owner)
