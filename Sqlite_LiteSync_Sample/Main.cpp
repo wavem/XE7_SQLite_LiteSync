@@ -50,20 +50,28 @@ void __fastcall TFormMain::PrintMsg(UnicodeString _str) {
 
 void __fastcall TFormMain::btn_DB_OpenClick(TObject *Sender)
 {
+	// Common
 	UnicodeString tempStr = L"";
 	AnsiString t_AnsiStr = "";
 
-    ((AnsiString)ed_IP->Text).c_str();
-
+    // Making Command
     t_AnsiStr.sprintf("file:%s?node=secondary&connect=tcp://%s:%s",
 		((AnsiString)ed_DB_Name->Text).c_str(),
     	((AnsiString)ed_IP->Text).c_str(),
     	((AnsiString)ed_Port->Text).c_str()  );
 
-
+	// Print Command
     tempStr = L"CMD : ";
     tempStr += t_AnsiStr;
     PrintMsg(tempStr);
+
+    if(sqlite3_open(t_AnsiStr.c_str(), &m_db) == SQLITE_OK) {
+		PrintMsg(L"DB Open Success");
+    } else {
+    	PrintMsg(L"DB Open Fail");
+        sqlite3_close(m_db);
+    }
+
 
 #if 0
 
