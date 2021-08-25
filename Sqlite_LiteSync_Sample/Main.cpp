@@ -7,6 +7,9 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "AdvMemo"
+#pragma link "AdvGlassButton"
+#pragma link "AdvSmoothButton"
+#pragma link "AdvEdit"
 #pragma resource "*.dfm"
 #pragma link "litesync-0.1.lib"
 TFormMain *FormMain;
@@ -42,6 +45,37 @@ void __fastcall TFormMain::ExitProgram() {
 void __fastcall TFormMain::PrintMsg(UnicodeString _str) {
 	int t_RowIdx = memo->Lines->Add(_str);
     memo->SetCursor(0, t_RowIdx);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::btn_DB_OpenClick(TObject *Sender)
+{
+	UnicodeString tempStr = L"";
+	AnsiString t_AnsiStr = "";
+
+    ((AnsiString)ed_IP->Text).c_str();
+
+    t_AnsiStr.sprintf("file:%s?node=secondary&connect=tcp://%s:%s",
+		((AnsiString)ed_DB_Name->Text).c_str(),
+    	((AnsiString)ed_IP->Text).c_str(),
+    	((AnsiString)ed_Port->Text).c_str()  );
+
+
+    tempStr = L"CMD : ";
+    tempStr += t_AnsiStr;
+    PrintMsg(tempStr);
+
+#if 0
+
+
+    char* t_url = "file:test.db?node=secondary&connect=tcp://192.168.0.64:1234";
+    if(sqlite3_open(t_url, &m_db) == SQLITE_OK) {
+		PrintMsg(L"DB Open Success");
+    } else {
+    	PrintMsg(L"DB Open Fail");
+        sqlite3_close(m_db);
+    }
+#endif
 }
 //---------------------------------------------------------------------------
 

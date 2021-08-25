@@ -3,8 +3,8 @@ object FormMain: TFormMain
   Top = 0
   BorderStyle = bsDialog
   Caption = 'SQLite LiteSync Sample'
-  ClientHeight = 479
-  ClientWidth = 671
+  ClientHeight = 775
+  ClientWidth = 839
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -20,8 +20,8 @@ object FormMain: TFormMain
   object ___pnBase: TPanel
     Left = 0
     Top = 0
-    Width = 671
-    Height = 479
+    Width = 839
+    Height = 775
     Align = alClient
     BevelOuter = bvNone
     Color = 3026478
@@ -31,10 +31,49 @@ object FormMain: TFormMain
     ExplicitTop = 88
     ExplicitWidth = 185
     ExplicitHeight = 41
+    object lb_DB_Name: TLabel
+      Left = 40
+      Top = 61
+      Width = 65
+      Height = 16
+      Caption = 'DB Name :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lb_IP: TLabel
+      Left = 83
+      Top = 92
+      Width = 22
+      Height = 16
+      Caption = 'IP :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lb_Port: TLabel
+      Left = 68
+      Top = 123
+      Width = 37
+      Height = 16
+      Caption = 'Port :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
     object memo: TAdvMemo
       Left = 0
-      Top = 272
-      Width = 671
+      Top = 568
+      Width = 839
       Height = 207
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False
@@ -128,7 +167,7 @@ object FormMain: TFormMain
       SelBkColor = clNavy
       ShowRightMargin = True
       SmartTabs = False
-      TabOrder = 0
+      TabOrder = 1
       TabStop = True
       TrimTrailingSpaces = False
       UILanguage.ScrollHint = 'Row'
@@ -145,6 +184,130 @@ object FormMain: TFormMain
       UseStyler = True
       Version = '3.4.1.0'
       WordWrap = wwNone
+      ExplicitTop = 272
+      ExplicitWidth = 671
+    end
+    object btn_DB_Open: TAdvGlassButton
+      Left = 111
+      Top = 151
+      Width = 121
+      Height = 33
+      Cursor = crHandPoint
+      BackColor = 1401051
+      Caption = 'Open'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ForeColor = clWhite
+      GlowColor = 16760205
+      InnerBorderColor = clBlack
+      OuterBorderColor = clWhite
+      ParentFont = False
+      ShineColor = clWhite
+      TabOrder = 2
+      Version = '1.3.0.2'
+      OnClick = btn_DB_OpenClick
+    end
+    object ed_DB_Name: TAdvEdit
+      Left = 111
+      Top = 58
+      Width = 121
+      Height = 25
+      AutoThousandSeparator = False
+      EditAlign = eaCenter
+      EmptyTextStyle = []
+      FocusColor = clWhite
+      LabelFont.Charset = DEFAULT_CHARSET
+      LabelFont.Color = clWindowText
+      LabelFont.Height = -11
+      LabelFont.Name = 'Tahoma'
+      LabelFont.Style = []
+      Lookup.Font.Charset = DEFAULT_CHARSET
+      Lookup.Font.Color = clWindowText
+      Lookup.Font.Height = -11
+      Lookup.Font.Name = 'Arial'
+      Lookup.Font.Style = []
+      Lookup.Separator = ';'
+      AutoSize = False
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      Text = 'test.db'
+      Visible = True
+      Version = '3.3.5.3'
+    end
+    object ed_IP: TAdvEdit
+      Left = 111
+      Top = 89
+      Width = 121
+      Height = 25
+      AutoThousandSeparator = False
+      EditAlign = eaCenter
+      EmptyTextStyle = []
+      FocusColor = clWhite
+      LabelFont.Charset = DEFAULT_CHARSET
+      LabelFont.Color = clWindowText
+      LabelFont.Height = -11
+      LabelFont.Name = 'Tahoma'
+      LabelFont.Style = []
+      Lookup.Font.Charset = DEFAULT_CHARSET
+      Lookup.Font.Color = clWindowText
+      Lookup.Font.Height = -11
+      Lookup.Font.Name = 'Arial'
+      Lookup.Font.Style = []
+      Lookup.Separator = ';'
+      AutoSize = False
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      Text = '192.168.0.64'
+      Visible = True
+      Version = '3.3.5.3'
+    end
+    object ed_Port: TAdvEdit
+      Left = 111
+      Top = 120
+      Width = 121
+      Height = 25
+      AutoThousandSeparator = False
+      EditAlign = eaCenter
+      EmptyTextStyle = []
+      FocusColor = clWhite
+      LabelFont.Charset = DEFAULT_CHARSET
+      LabelFont.Color = clWindowText
+      LabelFont.Height = -11
+      LabelFont.Name = 'Tahoma'
+      LabelFont.Style = []
+      Lookup.Font.Charset = DEFAULT_CHARSET
+      Lookup.Font.Color = clWindowText
+      Lookup.Font.Height = -11
+      Lookup.Font.Name = 'Arial'
+      Lookup.Font.Style = []
+      Lookup.Separator = ';'
+      AutoSize = False
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 4
+      Text = '1234'
+      Visible = True
+      Version = '3.3.5.3'
     end
   end
 end
