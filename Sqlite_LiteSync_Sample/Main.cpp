@@ -25,6 +25,11 @@ void __fastcall TFormMain::FormClose(TObject *Sender, TCloseAction &Action)
 //---------------------------------------------------------------------------
 
 void __fastcall TFormMain::InitProgram() {
+
+	// Init Member Variables
+    m_db = NULL;
+
+
 	PrintMsg(L"Init Success");
 }
 //---------------------------------------------------------------------------

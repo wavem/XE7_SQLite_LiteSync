@@ -28,6 +28,9 @@ public: // BASIC MEMBER FUNCTIONS
 	void __fastcall InitProgram();
     void __fastcall ExitProgram();
     void __fastcall PrintMsg(UnicodeString _str);
+
+public: // SQLITE (with Lite Sync)
+	sqlite3 *m_db;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormMain *FormMain;
