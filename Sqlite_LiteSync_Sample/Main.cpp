@@ -65,25 +65,13 @@ void __fastcall TFormMain::btn_DB_OpenClick(TObject *Sender)
     tempStr += t_AnsiStr;
     PrintMsg(tempStr);
 
+    // Open DB Routine
     if(sqlite3_open(t_AnsiStr.c_str(), &m_db) == SQLITE_OK) {
 		PrintMsg(L"DB Open Success");
     } else {
     	PrintMsg(L"DB Open Fail");
         sqlite3_close(m_db);
     }
-
-
-#if 0
-
-
-    char* t_url = "file:test.db?node=secondary&connect=tcp://192.168.0.64:1234";
-    if(sqlite3_open(t_url, &m_db) == SQLITE_OK) {
-		PrintMsg(L"DB Open Success");
-    } else {
-    	PrintMsg(L"DB Open Fail");
-        sqlite3_close(m_db);
-    }
-#endif
 }
 //---------------------------------------------------------------------------
 
