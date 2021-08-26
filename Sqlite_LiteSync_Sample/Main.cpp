@@ -39,6 +39,8 @@ void __fastcall TFormMain::InitProgram() {
 
 void __fastcall TFormMain::ExitProgram() {
 
+	// Close DB Routine
+	if(m_db) sqlite3_close(m_db);
 }
 //---------------------------------------------------------------------------
 
