@@ -27,10 +27,6 @@ object FormMain: TFormMain
     Color = 3026478
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 48
-    ExplicitTop = 88
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object lb_DB_Name: TLabel
       Left = 40
       Top = 61
@@ -152,7 +148,7 @@ object FormMain: TFormMain
         '')
       MarkerList.UseDefaultMarkerImageIndex = False
       MarkerList.DefaultMarkerImageIndex = -1
-      MarkerList.ImageTransparentColor = -1
+      MarkerList.ImageTransparentColor = 33554432
       OleDropTarget = []
       PrintOptions.MarginLeft = 0
       PrintOptions.MarginRight = 0
@@ -184,8 +180,6 @@ object FormMain: TFormMain
       UseStyler = True
       Version = '3.4.1.0'
       WordWrap = wwNone
-      ExplicitTop = 272
-      ExplicitWidth = 671
     end
     object btn_DB_Open: TAdvGlassButton
       Left = 111
@@ -308,6 +302,28 @@ object FormMain: TFormMain
       Text = '1234'
       Visible = True
       Version = '3.3.5.3'
+    end
+    object btn_Test: TAdvGlassButton
+      Left = 263
+      Top = 58
+      Width = 121
+      Height = 33
+      Cursor = crHandPoint
+      BackColor = 1401051
+      Caption = 'Test'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ForeColor = clWhite
+      GlowColor = 16760205
+      InnerBorderColor = clBlack
+      OuterBorderColor = clWhite
+      ParentFont = False
+      ShineColor = clWhite
+      TabOrder = 5
+      Version = '1.3.0.2'
     end
   end
 end

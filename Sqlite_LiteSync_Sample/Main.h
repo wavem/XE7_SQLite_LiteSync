@@ -27,6 +27,7 @@ __published:	// IDE-managed Components
 	TLabel *lb_Port;
 	TAdvEdit *ed_IP;
 	TAdvEdit *ed_Port;
+	TAdvGlassButton *btn_Test;
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall btn_DB_OpenClick(TObject *Sender);
 private:	// User declarations

@@ -29,10 +29,20 @@ void __fastcall TFormMain::FormClose(TObject *Sender, TCloseAction &Action)
 
 void __fastcall TFormMain::InitProgram() {
 
+	// Common
+    UnicodeString tempStr = L"";
+
 	// Init Member Variables
     m_db = NULL;
 
 
+
+    // Get SQLite Version
+    tempStr = L"SQLite Version : ";
+    tempStr += sqlite3_libversion();
+    PrintMsg(tempStr);
+
+    // Init Complete Message
 	PrintMsg(L"Init Success");
 }
 //---------------------------------------------------------------------------
@@ -76,4 +86,3 @@ void __fastcall TFormMain::btn_DB_OpenClick(TObject *Sender)
     }
 }
 //---------------------------------------------------------------------------
-
