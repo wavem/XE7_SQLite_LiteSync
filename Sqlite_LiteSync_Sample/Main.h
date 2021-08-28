@@ -30,6 +30,7 @@ __published:	// IDE-managed Components
 	TAdvGlassButton *btn_Test;
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall btn_DB_OpenClick(TObject *Sender);
+	void __fastcall btn_TestClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormMain(TComponent* Owner);
@@ -43,6 +44,7 @@ public: // BASIC MEMBER FUNCTIONS
 
 public: // SQLITE (with Lite Sync)
 	sqlite3 *m_db;
+    sqlite3_stmt *m_res;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormMain *FormMain;

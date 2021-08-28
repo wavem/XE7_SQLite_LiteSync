@@ -81,8 +81,51 @@ void __fastcall TFormMain::btn_DB_OpenClick(TObject *Sender)
     if(sqlite3_open(t_AnsiStr.c_str(), &m_db) == SQLITE_OK) {
 		PrintMsg(L"DB Open Success");
     } else {
-    	PrintMsg(L"DB Open Fail");
+        tempStr = L"DB Open Fail : ";
+        tempStr += sqlite3_errmsg(m_db);
+        PrintMsg(tempStr);
         sqlite3_close(m_db);
     }
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFormMain::btn_TestClick(TObject *Sender)
+{
+	// Common
+	UnicodeString tempStr = L"";
+    AnsiString t_AnsiStr = "";
+    int rc = 0;
+    char *temp = NULL;
+
+	// Making Query
+	rc = sqlite3_prepare_v2(m_db, "SELECT * from t1", -1, &m_res, 0);
+
+    if(rc == SQLITE_OK) {
+        PrintMsg(L"Query Success");
+    } else {
+    	tempStr.sprintf(L"Query Fail (Err Code : %d) : ", rc);
+        tempStr += sqlite3_errmsg(m_db);
+        PrintMsg(tempStr);
+        return;
+    }
+
+
+    while(sqlite3_step(m_res) != SQLITE_DONE) {
+
+    	temp = sqlite3_column_text(m_res, 0);
+
+    	tempStr = temp;
+
+        PrintMsg(tempStr);
+
+        temp = sqlite3_column_text(m_res, 1);
+
+    	tempStr = temp;
+
+        PrintMsg(tempStr);
+    }
+
+    sqlite3_finalize(m_res);
+}
+//---------------------------------------------------------------------------
+

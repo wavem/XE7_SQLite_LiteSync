@@ -324,6 +324,7 @@ object FormMain: TFormMain
       ShineColor = clWhite
       TabOrder = 5
       Version = '1.3.0.2'
+      OnClick = btn_TestClick
     end
   end
 end
