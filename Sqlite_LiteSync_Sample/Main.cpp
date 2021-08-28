@@ -109,20 +109,14 @@ void __fastcall TFormMain::btn_TestClick(TObject *Sender)
         return;
     }
 
+    int t_ColCnt = sqlite3_column_count(m_res);
 
     while(sqlite3_step(m_res) != SQLITE_DONE) {
-
-    	temp = sqlite3_column_text(m_res, 0);
-
-    	tempStr = temp;
-
-        PrintMsg(tempStr);
-
-        temp = sqlite3_column_text(m_res, 1);
-
-    	tempStr = temp;
-
-        PrintMsg(tempStr);
+    	for(int i = 0 ; i < t_ColCnt ; i++) {
+        	temp = sqlite3_column_text(m_res, i);
+    		tempStr = temp;
+        	PrintMsg(tempStr);
+        }
     }
 
     sqlite3_finalize(m_res);
